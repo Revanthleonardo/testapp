@@ -6,7 +6,7 @@ import sys
 # you should not store your password in plain-text here.
 
 try:
-  client = pymongo.MongoClient(mongodb+srv://rev:<password>@cluster.kigfmdr.mongodb.net/?retryWrites=true&w=majority)
+  client = pymongo.MongoClient(mongodb+srv://rev:4qXHNy2rBXNwmTeq@cluster.kigfmdr.mongodb.net/?retryWrites=true&w=majority)
   
 # return a friendly error if a URI error is thrown 
 except pymongo.errors.ConfigurationError:

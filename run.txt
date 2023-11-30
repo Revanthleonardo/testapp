@@ -1,3 +1,8 @@
+rev
+4qXHNy2rBXNwmTeq
+
+-----------------------------
+
 sudo apt update
 sudo apt install python3
 
