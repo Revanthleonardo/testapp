@@ -12,3 +12,10 @@ sudo ls -lha /path/
 sudo rm -r -f /path/
 
 uvicorn main:app --reload
+
+ssh -i "revanth.pem" ubuntu@ec2-3-25-246-63.ap-southeast-2.compute.amazonaws.com
+
+fastapi==0.73.0
+uvicorn==0.17.4
+
+pip install -r requirements.txt
