@@ -6,3 +6,9 @@ python3 --version
 sudo apt install python3-pip
 
 sudo git clone https://github.com/Revanthleonardo/testapp.git
+
+sudo ls -lha /path/
+
+sudo rm -r -f /path/
+
+uvicorn main:app --reload

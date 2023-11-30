@@ -1,10 +1,8 @@
-# from fastapi import FastAPI
+from fastapi import FastAPI
 
-# app = FastAPI()
+app = FastAPI()
 
 
-# @app.get("/")
-# def read_root():
-#     return {"Hello": "World"}
-
-print("Hello World")
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
