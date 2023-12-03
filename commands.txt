@@ -44,4 +44,14 @@ docker-compose down (to stop)
 
 docker system prune -a (to remove unwanted containers)
 docker-compose down --remove-orphans
+
 ---------------------------------------------------------
+
+mongodb
+sudo systemctl start mongod
+sudo systemctl status mongod
+sudo systemctl stop mongod
+sudo service mongod stop
+mongosh
+
+----------------------------------------------------------
