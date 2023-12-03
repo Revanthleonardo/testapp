@@ -25,7 +25,23 @@ uvicorn==0.17.4
 
 pip install -r requirements.txt
 
+pip freeze > requirements.txt
+
 
 reinstall ubuntu
 sudo apt-get update
 sudo apt-get install --reinstall ubuntu-desktop
+
+docker run -p 8000:8000 myfastapiapp
+
+---------------------------------------------------------
+to run both fastapi and mongodb (all containers)
+---------------------------------------------------------
+docker build -t myfastapiapp .     
+docker-compose build
+docker-compose up -d (to start)
+docker-compose down (to stop)
+
+docker system prune -a (to remove unwanted containers)
+docker-compose down --remove-orphans
+---------------------------------------------------------

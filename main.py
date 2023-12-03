@@ -1,24 +1,27 @@
-# main.py
-
-from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Depends, HTTPException
 from pymongo import MongoClient
+from pymongo.errors import ConnectionFailure
 
 app = FastAPI()
 
-# Connect to MongoDB
-client = MongoClient("mongodb://mongo:27017/")
-db = client["mydatabase"]
-collection = db["mycollection"]
+# MongoDB connection details
+mongo_uri = "mongodb://localhost:27017/"
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, FastAPI and MongoDB!"}
+# Dependency to establish MongoDB connection
+def get_db():
+    try:
+        client = MongoClient(mongo_uri)
+        # Return the database connection to be used in route handlers
+        return client
+    except ConnectionFailure as e:
+        raise HTTPException(status_code=500, detail=f"Failed to connect to MongoDB: {e}")
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int):
-    item = collection.find_one({"item_id": item_id})
-    if item:
-        return item
-    else:
-        return JSONResponse(content={"error": "Item not found"}, status_code=404)
+# Example route to check MongoDB connection
+@app.get("/check_mongodb_connection")
+def check_mongodb_connection(db: MongoClient = Depends(get_db)):
+    try:
+        # Check if the connection is successful by listing the databases
+        database_list = db.list_database_names()
+        return {"message": "Connected to MongoDB", "databases": database_list}
+    except ConnectionFailure as e:
+        raise HTTPException(status_code=500, detail=f"Failed to list databases in MongoDB: {e}")

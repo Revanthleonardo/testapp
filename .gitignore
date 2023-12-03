@@ -1,37 +1,37 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# # Byte-compiled / optimized / DLL files
+# __pycache__/
+# *.pyc
+# *.pyo
+# *.pyd
 
-# Virtual environment
-venv/
+# # Virtual environment
+# venv/
 
-# Docker
-docker-compose.yml
-Dockerfile
+# # Docker
+# docker-compose.yml
+# Dockerfile
 
-# Editor/IDE-specific files
-.vscode/
-.idea/
+# # Editor/IDE-specific files
+# .vscode/
+# .idea/
 
-# Local development settings
-.env
+# # Local development settings
+# .env
 
-# Compiled Python files
-*.pyc
+# # Compiled Python files
+# *.pyc
 
-# Compiled C extension
-*.so
+# # Compiled C extension
+# *.so
 
-# Dependency directories
-__pycache__/
-node_modules/
+# # Dependency directories
+# __pycache__/
+# node_modules/
 
-# Distribution directories
-dist/
-build/
-*.egg-info/
+# # Distribution directories
+# dist/
+# build/
+# *.egg-info/
 
 
-revanth.pem
+# revanth.pem
